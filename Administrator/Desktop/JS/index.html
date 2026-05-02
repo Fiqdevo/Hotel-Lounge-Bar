@@ -2,642 +2,234 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>J Suites | Lounge, Bar & Accommodation - Bwebajja</title>
-    <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FEF9F0;  /* soft cream background */
-            color: #2C2A29;
-            scroll-behavior: smooth;
-        }
-
-        /* Color Variables */
-        :root {
-            --orange: #F97316;
-            --orange-dark: #EA580C;
-            --orange-light: #FFEDD5;
-            --cream: #FEF3C7;
-            --gold: #D4AF37;
-            --gold-dark: #B8860B;
-            --dark-text: #2D2A24;
-            --light-bg: #FFFBF5;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 251, 245, 0.95);
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            border-bottom: 1px solid rgba(249, 115, 22, 0.2);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0.9rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-        }
-        .logo span {
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: var(--orange-dark);
-            display: block;
-            letter-spacing: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-            flex-wrap: wrap;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #3D3A34;
-            transition: 0.2s;
-            font-size: 1rem;
-            letter-spacing: -0.2px;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--orange);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: var(--orange);
-            transition: 0.25s;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .booking-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-call, .btn-wa {
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            transition: 0.2s;
-        }
-        .btn-call {
-            background: var(--orange);
-            color: white;
-            border: 1px solid var(--orange);
-        }
-        .btn-call:hover {
-            background: var(--orange-dark);
-            transform: translateY(-2px);
-        }
-        .btn-wa {
-            background: #25D366;
-            color: white;
-            border: 1px solid #25D366;
-        }
-        .btn-wa:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(120deg, #FFF7ED 0%, #FFEDD5 100%);
-            padding: 3rem 2rem 4rem;
-            text-align: center;
-            border-bottom: 1px solid rgba(249, 115, 22, 0.15);
-        }
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .hero h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--orange-dark);
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #5B5348;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        .hero-badges {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        .badge {
-            background: white;
-            padding: 0.4rem 1.2rem;
-            border-radius: 60px;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-left: 3px solid var(--gold);
-        }
-        .location {
-            margin-top: 1.5rem;
-            font-weight: 500;
-            color: var(--orange-dark);
-        }
-        .location i {
-            margin-right: 6px;
-        }
-
-        /* Main container sections */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-            background: linear-gradient(135deg, var(--orange), var(--gold));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-        .section-sub {
-            color: #6B5A4E;
-            margin-bottom: 2.5rem;
-            font-size: 1rem;
-            border-left: 4px solid var(--orange);
-            padding-left: 1rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 40px -12px rgba(249, 115, 22, 0.2);
-            border-color: var(--orange-light);
-        }
-        .card-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #FFE8D6;
-        }
-        .card-img i {
-            font-size: 4rem;
-            color: var(--orange);
-            background: rgba(255,255,240,0.8);
-            padding: 1rem;
-            border-radius: 60px;
-        }
-        .card-content {
-            padding: 1.5rem;
-        }
-        .card-content h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--orange-dark);
-        }
-        .card-content p {
-            color: #4B423C;
-            line-height: 1.4;
-            margin-bottom: 1.5rem;
-        }
-        .card-btns {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .wa-sm, .call-sm {
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 60px;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .wa-sm {
-            background: #25D36610;
-            color: #128C7E;
-            border: 1px solid #25D366;
-        }
-        .wa-sm:hover {
-            background: #25D366;
-            color: white;
-        }
-        .call-sm {
-            background: var(--orange-light);
-            color: var(--orange-dark);
-            border: 1px solid var(--orange);
-        }
-        .call-sm:hover {
-            background: var(--orange);
-            color: white;
-        }
-
-        /* Specific lodge detail row */
-        .lodge-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            background: #FFFBF0;
-            border-radius: 36px;
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-        .feature-item {
-            flex: 1;
-            min-width: 180px;
-            text-align: center;
-        }
-        .feature-item i {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contact & CTA */
-        .contact-cta {
-            background: linear-gradient(110deg, #2C2A29 0%, #1F1C19 100%);
-            border-radius: 48px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2.5rem 2rem;
-            margin: 3rem 0 0;
-            gap: 2rem;
-        }
-        .cta-text h3 {
-            font-size: 1.8rem;
-            color: var(--cream);
-            font-weight: 700;
-        }
-        .cta-text p {
-            color: #E6D5B8;
-        }
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-large {
-            padding: 0.9rem 2rem;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 50px;
-        }
-        .btn-wa-large {
-            background: #25D366;
-            color: white;
-        }
-        .btn-call-large {
-            background: var(--orange);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background: #F5EBE0;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 2rem;
-            border-top: 1px solid #F0E2D0;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            text-decoration: none;
-            color: #5B4B3A;
-            font-weight: 500;
-        }
-
-        @media (max-width: 850px) {
-            .nav-container {
-                flex-direction: column;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .container {
-                padding: 2rem 1rem;
-            }
-        }
-
-        /* custom gold gradient */
-        .gold-border {
-            border-bottom: 3px solid var(--gold);
-            width: 80px;
-            margin: 0.5rem 0 1rem;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="J Suites Bwebajja - Premium Lounge, Bar, Sauna & Steam Bath, Live Football, Luxury Lodges & Accommodation along Entebbe Road, Uganda. Call 0788975743">
+    <meta name="keywords" content="J Suites, Bwebajja, Entebbe Road, Lounge Uganda, Bar Kampala, Sauna Steam Bath, Live Football, Lodges Accommodation, Hotel Uganda">
+    <meta name="author" content="J Suites">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="J Suites | Luxury Lounge, Bar & Accommodation - Bwebajja">
+    <meta property="og:description" content="Your premium getaway in Bwebajja — Lounge, Bar, Sauna, Live Football & Luxury Lodges">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_UG">
+    <title>J Suites | Luxury Lounge, Bar & Accommodation - Bwebajja, Uganda</title>
+    <link rel="canonical" href="index.html">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header>
-    <div class="nav-container">
-        <div class="logo">
-            <h1>J SUITES</h1>
-            <span>Lounge • Bar • Accommodation</span>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand">
+                <span class="brand-initial">J</span>
+                <div class="brand-text">
+                    <h1>SUITES</h1>
+                    <span class="brand-tagline">Bwebajja • Uganda</span>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="lounge.html">Lounge</a></li>
+                    <li><a href="wellness.html">Wellness</a></li>
+                    <li><a href="football.html">Football</a></li>
+                    <li><a href="bar.html">Bar</a></li>
+                    <li><a href="lodges.html">Lodges</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+256788975743" class="btn btn-call">
+                    <i class="fas fa-phone"></i>
+                    <span>Call</span>
+                </a>
+                <a href="https://wa.me/256788975743?text=Hello%20J%20Suites%2C%20I%20would%20like%20to%20make%20a%20reservation." class="btn btn-whatsapp" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Book</span>
+                </a>
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#lounge">Lounge</a></li>
-            <li><a href="#sauna">Sauna & Steam</a></li>
-            <li><a href="#football">Live Football</a></li>
-            <li><a href="#bar">Bar</a></li>
-            <li><a href="#lodges">Lodges</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="booking-buttons">
-            <a href="tel:+256788975743" class="btn-call"><i class="fas fa-phone-alt"></i> Call</a>
-            <a href="https://wa.me/256788975743?text=Hello%20J%20Suites%2C%20I%20would%20like%20to%20book%20a%20service%20or%20make%20a%20reservation." class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
-    </div>
-</header>
+    </header>
 
-<!-- Hero / Home Section -->
-<section id="home">
-    <div class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h2>Escape. Relax. Celebrate.</h2>
-            <p>Your premium getaway in Bwebajja — just off Entebbe Road. Lounge by day, vibrant nights, sauna serenity, and cozy lodges.</p>
-            <div class="hero-badges">
-                <span class="badge"><i class="fas fa-wine-glass-alt"></i> Lounge & Bar</span>
-                <span class="badge"><i class="fas fa-futbol"></i> Live Football</span>
-                <span class="badge"><i class="fas fa-hot-tub"></i> Sauna & Steam Bath</span>
-                <span class="badge"><i class="fas fa-bed"></i> Luxury Lodges</span>
+            <p class="hero-subtitle">Welcome to</p>
+            <h2 class="hero-title">J Suites</h2>
+            <p class="hero-description">An exclusive retreat along Entebbe Road where sophistication meets comfort. Experience world-class lounge services, rejuvenating wellness facilities, electrifying live football, and luxurious accommodations.</p>
+            <div class="hero-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bwebajja, Uganda — Minutes from Entebbe Road</span>
             </div>
-            <div class="location"><i class="fas fa-map-marker-alt"></i> Bwebajja, along Entebbe Road — 10km from Kampala</div>
-        </div>
-    </div>
-</section>
-
-<main>
-    <!-- LOUNGE SECTION -->
-    <div class="container" id="lounge">
-        <h2 class="section-title">The Lounge Experience</h2>
-        <div class="gold-border"></div>
-        <p class="section-sub">Chic, air-conditioned comfort with soft seating, premium music, and handcrafted mocktails & cocktails.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-couch"></i></div>
-                <div class="card-content">
-                    <h3>Elegant Lounge</h3>
-                    <p>Relax in our plush lounge with chilled vibes, snack menu, and friendly service. Ideal for casual meetings or unwinding after work.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=I'd%20like%20to%20book%20a%20lounge%20table%20at%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Book table</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-music"></i></div>
-                <div class="card-content">
-                    <h3>Live DJ Evenings</h3>
-                    <p>Weekend afrobeat & RNB sessions. Ask about our lounge happy hours and shisha options.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=DJ%20event%20inquiry%20for%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Reserve spot</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call us</a>
-                    </div>
-                </div>
+            <div class="hero-cta">
+                <a href="https://wa.me/256788975743?text=I%20want%20to%20book%20at%20J%20Suites" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i> Book Now
+                </a>
+                <a href="tel:+256788975743" class="btn btn-outline btn-large">
+                    <i class="fas fa-phone"></i> 0788975743
+                </a>
             </div>
         </div>
-    </div>
+        <div class="hero-scroll">
+            <span>Explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-    <!-- SAUNA & STEAM BATH -->
-    <div class="container" id="sauna" style="background: #FFF9F0; border-radius: 48px; margin: 2rem auto;">
-        <h2 class="section-title">Sauna & Steam Bath</h2>
-        <div class="gold-border"></div>
-        <p class="section-sub">Rejuvenate your body and mind — private & shared sessions, towel service included.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-hot-tub"></i></div>
-                <div class="card-content">
-                    <h3>Traditional Sauna</h3>
-                    <p>Dry heat therapy that improves circulation, relieves stress, and detoxifies. Perfect after a long day.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Sauna%20booking%20for%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Book sauna</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
-                    </div>
-                </div>
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-intro">
+                <span class="section-label">What We Offer</span>
+                <h3 class="section-heading">Curated Experiences</h3>
+                <p class="section-description">Every detail designed for your comfort and enjoyment</p>
             </div>
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-water"></i></div>
-                <div class="card-content">
-                    <h3>Steam Bath</h3>
-                    <p>Humid warmth opens pores, relaxes muscles, and clears breathing. Available daily 10am–10pm.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Steam%20bath%20reservation%20at%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Steam session</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call us</a>
+            <div class="services-grid">
+                <a href="lounge.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wine-glass"></i>
                     </div>
-                </div>
+                    <h4>Lounge Services</h4>
+                    <p>Elegant seating, premium ambiance</p>
+                </a>
+                <a href="wellness.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h4>Sauna & Steam</h4>
+                    <p>Rejuvenate body and mind</p>
+                </a>
+                <a href="football.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h4>Live Football</h4>
+                    <p>Big screens, electric atmosphere</p>
+                </a>
+                <a href="bar.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cocktail"></i>
+                    </div>
+                    <h4>Signature Bar</h4>
+                    <p>Craft cocktails, premium spirits</p>
+                </a>
+                <a href="lodges.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h4>Luxury Lodges</h4>
+                    <p>Comfortable, modern accommodation</p>
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- LIVE FOOTBALL SECTION -->
-    <div class="container" id="football">
-        <h2 class="section-title">Live Football – Big Screen Action</h2>
-        <div class="gold-border"></div>
-        <p class="section-sub">EPL, UCL, La Liga, and local derbies. Cheer with fellow fans on our giant screens, with cold beer and bites.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-futbol"></i></div>
-                <div class="card-content">
-                    <h3>Matchday Experience</h3>
-                    <p>Two 75” 4K screens, surround sound. Special matchday drink offers.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Match%20day%20table%20reservation%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Reserve seat</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">Our Story</span>
+                    <h3 class="section-heading">A Sanctuary in Bwebajja</h3>
+                    <p>J Suites was conceived as a haven for those seeking refinement without pretense. Located just off the bustling Entebbe Road, we offer an escape that feels both elevated and accessible.</p>
+                    <p>Whether you're here for a business lunch, weekend relaxation, matchday excitement, or an overnight stay, every moment at J Suites is crafted with intention.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Premium Location</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Professional Service</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Modern Amenities</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-beer"></i></div>
-                <div class="card-content">
-                    <h3>Sports Bar Vibes</h3>
-                    <p>Watch the game with a cold Nile Special, or order our classic wings & fries.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Sports%20bar%20booking%20-%20football" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Order now</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-building"></i>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- BAR SECTION -->
-    <div class="container" id="bar" style="background: linear-gradient(145deg, #FFF7ED, #FFF0E0); border-radius: 48px;">
-        <h2 class="section-title">Signature Bar & Cocktails</h2>
-        <div class="gold-border"></div>
-        <p class="section-sub">Craft beers, premium spirits, signature cocktails, and non-alcoholic refreshments.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-cocktail"></i></div>
-                <div class="card-content">
-                    <h3>Cocktail Lounge</h3>
-                    <p>Try our “Golden Suite” cocktail (orange & honey infusion) or classic Mojito. Happy hours 5-7pm.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Cocktail%20table%20booking%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Book a table</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-content">
-                    <h3>Wine & Whisky</h3>
-                    <p>Curated selection of South African wines and single malts. Bar snacks always available.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Wine%20booking%20J%20Suites" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp order</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call us</a>
-                    </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h3>Ready to Experience J Suites?</h3>
+                <p>Reserve your table, book a room, or inquire about our services. We're just a call or message away.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/256788975743?text=Hello%2C%20I%20would%20like%20to%20make%20a%20booking%20at%20J%20Suites" class="btn btn-whatsapp btn-large" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                    <a href="tel:+256788975743" class="btn btn-call btn-large">
+                        <i class="fas fa-phone"></i> Call 0788975743
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- LODGES & ACCOMMODATION -->
-    <div class="container" id="lodges">
-        <h2 class="section-title">Luxury Lodges & Accommodation</h2>
-        <div class="gold-border"></div>
-        <p class="section-sub">Comfortable, modern rooms with lake-view options. Stay overnight after your lounge experience.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-bed"></i></div>
-                <div class="card-content">
-                    <h3>Standard & Deluxe Rooms</h3>
-                    <p>En-suite bathrooms, air conditioning, free WiFi, and premium bedding. Daily housekeeping.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Hotel%20room%20booking%20at%20J%20Suites%20-%20dates%20please" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> Book a lodge</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
-                    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-initial">J</div>
+                    <h4>J Suites</h4>
+                    <p>Luxury lounge, bar, and accommodation in the heart of Bwebajja.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lounge.html">Lounge</a></li>
+                        <li><a href="wellness.html">Wellness</a></li>
+                        <li><a href="football.html">Football</a></li>
+                        <li><a href="bar.html">Bar</a></li>
+                        <li><a href="lodges.html">Lodges</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Bwebajja, Entebbe Road, Uganda</li>
+                        <li><a href="tel:+256788975743"><i class="fas fa-phone"></i> 0788975743</a></li>
+                        <li><a href="https://wa.me/256788975743" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h5>Hours</h5>
+                    <ul>
+                        <li>Lounge & Bar: 10am – Late</li>
+                        <li>Wellness: 10am – 10pm</li>
+                        <li>Lodges: 24/7</li>
+                    </ul>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="card-img"><i class="fas fa-utensils"></i></div>
-                <div class="card-content">
-                    <h3>Overnight Packages</h3>
-                    <p>Stay + breakfast + lounge access. Special rates for groups and long stays.</p>
-                    <div class="card-btns">
-                        <a href="https://wa.me/256788975743?text=Overnight%20package%20inquiry" class="wa-sm" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp offer</a>
-                        <a href="tel:+256788975743" class="call-sm"><i class="fas fa-phone"></i> Call</a>
-                    </div>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 J Suites. All rights reserved.</p>
+                <p class="footer-location">📍 Bwebajja, Uganda | 📞 +256 788 975743</p>
             </div>
         </div>
-        <div class="lodge-features">
-            <div class="feature-item"><i class="fas fa-wifi"></i> <h4>Fast WiFi</h4></div>
-            <div class="feature-item"><i class="fas fa-car"></i> <h4>Free Parking</h4></div>
-            <div class="feature-item"><i class="fas fa-shield-alt"></i> <h4>24/7 Security</h4></div>
-            <div class="feature-item"><i class="fas fa-mug-hot"></i> <h4>In-room Coffee</h4></div>
-        </div>
-    </div>
+    </footer>
 
-    <!-- CONTACT & DIRECT BOOKING ZONE -->
-    <div class="container" id="contact">
-        <div class="contact-cta">
-            <div class="cta-text">
-                <h3>Ready to experience J Suites?</h3>
-                <p>Book a lounge table, sauna session, room, or just ask about our live football schedule — we’re one message away.</p>
-                <div class="location"><i class="fas fa-map-pin"></i> Bwebajja, Entebbe Road (Opposite Kampala International University)</div>
-            </div>
-            <div class="cta-buttons">
-                <a href="https://wa.me/256788975743?text=Hello%2C%20I%20want%20to%20make%20a%20booking%20at%20J%20Suites" class="btn-large btn-wa-large" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
-                <a href="tel:+256788975743" class="btn-large btn-call-large"><i class="fas fa-phone-alt"></i> Call 0788975743</a>
-            </div>
-        </div>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#lounge">Lounge</a>
-        <a href="#sauna">Sauna & Steam</a>
-        <a href="#football">Live Football</a>
-        <a href="#bar">Bar</a>
-        <a href="#lodges">Lodges</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <p style="color:#6B5A4E;">📍 Bwebajja, along Entebbe Road, Uganda | 📞 +256 788 975743 | ✨ Open daily 10am – late</p>
-    <p style="margin-top: 1rem; font-size: 0.8rem;">© 2025 J Suites — Orange & CreamGold Hospitality. Book direct via WhatsApp or call.</p>
-</footer>
-
-<!-- Built-in smooth scroll & mobile friendly -->
+    <script src="js/main.js"></script>
 </body>
 </html>
